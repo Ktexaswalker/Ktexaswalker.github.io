@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Hèctor Martínez Cervera</title>
+	<meta name="keywords" content="trabajador, curriculum, profesional, tecnologia, desarrollador, Barcelona, Python, CV"/>
+	<meta />
+	<style>
+		* {
+			font-style: arial;
+			text-decoration: none;
+			color: black;
+			font-size: 20px;
+		}
+		nav {
+			margin-top: 1vw;
+			position: relative;
+			height: 2vw;
+		}
+		.perfil {
+			/*background-color: red;*/
+			background-image: url("https://media-exp1.licdn.com/dms/image/C4D03AQEjAJ6RL6ZJQw/profile-displayphoto-shrink_800_800/0/1633622757425?e=1639008000&v=beta&t=Y5IBRU9OYz4ey086_1VX4unAHQAntCLoKDz3cUu0Llo");
+			position: relative;
+			object-fit: contain;
+			width: 300px;
+			height: -100px;
+			overflow: hidden;
+			border-radius: 50%;
+			padding-bottom: 290px;
+			background-position: center;
+			background-size: 120%;
+			background-repeat: no-repeat;
+			margin-top: 2vw;
+			border-width: 2px;
+			border-style: solid;
+			border-top-color: #44F;
+			border-left-color: #44F;
+			border-bottom-color: #1BF;
+			border-right-color: #1BF;
+			background-color: #14F3;
+		}
+		.whatsapp {
+			background-image: url("https://www.idalsys.com/wp-content/uploads/2019/03/whatsapp-icon.png");
+			background-color: black;
+			position: absolute;
+			object-fit: contain;
+			width: 100px;
+			height: 100px;
+			left: 12vw;
+			border-radius: 50%;
+			background-position: center;
+			background-size: 80%;
+			background-repeat: no-repeat;
+			margin-top: -5.4vw;
+			border-width: 2px;
+			border-style: solid;
+			border-top-color: #44F;
+			border-left-color: #44F;
+			border-bottom-color: #1BF;
+			border-right-color: #1BF;
+			background-color: #14F3;
+			z-index: 10;
+			display: grid;
+			place-items: center;
+		}
+		#circulo {
+			transform: rotate(-20deg);
+			text-transform: uppercase;
+			font-family: courier;
+			font-style: bolder;
+		}
+		#circulo span {
+			position: absolute;
+			top: -70px;
+			left: -7px;
+			height: 70px;
+			width: 16px;
+			text-align: center;
+			font-size: 22px;
+			transform-origin: bottom center;
+			color: #44F;
+			font-weight: bolder;
+		}
+		.textoDescriptivo {
+			margin: 5px 10px 30px 0px;
+		}
+		body {
+			background: radial-gradient(circle farthest-corner at 30% 3%,
+			hsla(187, 69%, 65%, .1) 20%, 
+			hsla(204, 100%, 50%, .1) 30%,
+			hsla(225, 100%, 60%, .1) 60%,
+			hsla(270, 100%, 60%, .1) 70%,
+			hsla(180, 100%, 50%, .1) 80%,
+			hsla(300, 100%, 70%, .1) 90%,
+			hsla(0, 100%, 70%, .05) 95%,
+			hsla(12, 100%, 50%, .1) 100%);
+			background-attachment: fixed;
+			margin-left: 5%;
+			/*color: white;*/				/*MODO NOCTURNO*/
+			/*background-color: black;*/	/*MODO NOCTURNO*/
+		}
+		a:active {
+			color: #EEE;
+			background-color:  #0447C5;
+		}
+		.etiqueta {
+			border-width: 3px;
+			margin: -3px 3px 3px 3px;
+			border-radius: 6px;
+			padding: 8px 19px;
+			border-color: darkblue;
+			background-color: #1558d6;
+			text-align: center;
+			margin:  3px 0px;
+		}
+		li ul li {
+			display: inline-flex;
+		}
+		.class li {
+			display: inline-flex;
+		}
+		.etiqueta {
+			color: white;
+			font-family: Arial;
+		}
+		.etiqueta:hover {
+			box-shadow: 2px 2px teal;
+			border-color: #1BF;
+		}
+		.etiqueta:active {
+			position: relative;
+			left: 1px;
+			top: 1px;
+			box-shadow: 1px 1px teal;
+		}
+		.idiomas progress {
+			display: inline-flex;
+		}
+		.idiomas label {
+			font-size: 20px;
+			/*text-align: justify;*/
+			font-family: verdana;
+		}
+		progress {
+			font-size: 40px;
+			/*background: radial-gradient(circle farthest-corner at 25% 75%, 
+				rgba(0,212,255,0.95) 8%, 
+				rgba(15,72,201,0.9) 40%, 
+				rgba(33,33,138,0.8) 69%, 
+				rgba(2,0,36,0.7) 100%);
+		}*/
+		}
+		.fecha {
+			font-size: 20px;
+			font-family: Arial;
+			font-style: italic;
+			/*text-align: justify;*/
+		}
+		.fecha span {
+			position: relative;
+			/*display: inline-flex;*/
+		}
+		video {
+			clip-path: inset(1vw 13%);
+			margin-top: -20px;
+			margin-bottom: -20px;
+			position: relative;
+			overflow: hidden;
+			display: flex;
+			flex: wrap;
+			width: 60%;
+			left: -7%;
+		}
+		/*filter: blur(15px);*/
+		.caja {
+			border-color: black;
+			border-width: 2px;
+			border-radius: 4px;
+			border-style: solid;
+			border-top-color: #44F;
+			border-left-color: #44F;
+			border-bottom-color: #1BF;
+			border-right-color: #1BF;
+			width: 50vw;
+			background-color: #14F3;
+			margin-bottom: 1%;
+			display: inline-flex;
+		}
+		.caja span {
+			font-size: 20px;
+			position: center;
+			margin-left: 5px;
+		}
+		ul {
+			list-style:  none;
+		}
+		h1 {
+			font-family: "Gill Sans Extrabold";
+			float: right;
+			margin-right: 10%;
+			margin-left: 65vw;
+			font-size: 30px;
+			margin-top: -10px;
+			position: fixed;
+		}
+		h2 {
+			font-family: verdana;
+		}
+		p {
+			font-family: "arial";
+			display: block;
+			border-width: 2px;
+			border-radius: 4px;
+			border-style: solid;
+			border-top-color: #44F;
+			border-left-color: #44F;
+			border-bottom-color: #1BF;
+			border-right-color: #1BF;
+			width: 60%;
+			background-color: #14F3;
+		}
+		section li div.fecha {
+			float: left;
+			margin-right: 2%;
+		}
+		.parrafo {
+			margin-left: 15%;
+			text-align: left;
+			width: 45vw;
+		}
+		.parrafo a {
+			text-decoration: line-through #44F2 1em;
+		}
+		details {
+			display: inline;
+			column-count: 1;
+			padding: 0px 5%;
+		}
+		label {
+			position: relative;
+			left: 250px;
+			top: 32px;
+			color: #EEE;
+			background-color:  #1558D6;
+			border: solid 3px #1558D6;
+			border-radius: 5px;
+		}
+		aside {
+			position: fixed;
+			left: 70vw;
+			top: 1vw;
+			width: 24vw;
+			text-align: justify;
+		}
+		button {
+			display: block;
+			margin: 7px;
+			background-color: #1558D6;
+			width: 10vw;
+			border-radius: 5px;
+		}
+		button {
+			color: white;
+			font-family: Arial;
+		}
+		button:hover {
+			box-shadow: 2px 2px teal;
+			/*border-color: #1BF;*/
+		}
+		button:active {
+			position: relative;
+			left: 1px;
+			top: 1px;
+			box-shadow: 1px 1px teal;
+		}
+		#formacion {
+			background-image: url("img_tree.gif"), url("paper.gif")
+		}
+		#experiencia {
+			background: url("img_tree.gif"), url("paper.gif")
+		}
+		#idiomas img {
+			background-image: url("https://chiubaka.com/wp-content/uploads/2017/09/how_busy_people_learn_languages.jpg");
+			background-repeat: no-repeat round;
+			background-size: cover;
+			/*background-color: rgba(255,255,255,0.2);*/
+			opacity: 0.1;
+			margin-left: 30vw;
+		}
+		#idiomas ul {
+			column-count: 2;
+			column-fill: ballance;
+			/*display: inline-grid;*/
+			/*justify-content: space-around;*/
+			width: 60vw;
+		}
+		#informatica {
+			
+		}
+		#pie {
+			margin-left: -5%;
+			border-width: 2px;
+			border-radius: 4px;
+			border-style: solid;
+			border-top-color: #44F1;
+			border-left-color: #44F1;
+			border-bottom-color: #1BF1;
+			border-right-color: #1BF1;
+			background-color: #14F1;
+		}
+		@media screen and (max-width:  900px) {
+			
+		}
+		@media screen and (max-width:  700px) {
+			
+		}
+		@media screen and (max-width:  600px) {
+			
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<nav>
+			<h1>Hèctor Martínez Cervera</h1>
+		</nav>
+	</header>
+	<article  id="formacion">
+		<h2>Formación</h2>
+		<section>
+			<ul>
+				<li><div class="fecha">09/2020 - 06/2021</div><p class="parrafo"><strong>FullStack Developer</strong> Academia <a href="https://cepibase.com/">Cepi-Base</a></p>
+					
+				</li>
+				
+				<li><div class="fecha">09/2016 - 06/2020</div><p class="parrafo">Técnico electricista industrial <strong>Ausbildung Elektroniker</strong>, <a href="https://wis.ihk.de/ihk/erfurt.html" target="_blank">IHK</a>, <a href="https://goo.gl/maps/F5MXMAffMKHMJMTT6" target="_blank">Erfurt</a></p></li>
+
+				<li><div class="fecha">04/2015 - 07/2015</div><p class="parrafo"><strong>Diseño de planos y esquemas de automatismos eléctricos</strong> <a href="https://fundaciocim.org/" target="_blank">Fundació CIM (UPC) Barcelonatech</a>, Barcelona</p></li>
+				
+				<li><div class="fecha">03/2012 - 02/2013</div><p class="parrafo"><strong>Curso de energías renovables</strong>, <a href="https://www.educaweb.com/centro/escola-oficis-catalunya-barcelona-36698/" target="_blank">Escola d'Oficis Catalunya</a>, <a href="https://goo.gl/maps/XsCvs6w6xkb4fAvx8" target="_blank">Hospitalet de Llobregat</a></p>
+				</li>
+
+				<li><div class="fecha">09/2018 - 06/2011</div><p class="parrafo"><strong>Grado superior de desarrollo de productos electrónicos</strong> <a href="https://www.salesianssarria.com/" target="_blank">Escuela Profesional Salesians de Sarriá</a><a href="https://goo.gl/maps/MSoXFSUmDLT5SU61A" target="_blank">Barcelona</a>. <br/>Conocimientos amplios de electricidad, estudios prácticos de baja tensión con control de potencias elevadas. Aprendizaje de sistemas de la información computacional, diseño de hardware, programación en ordenadores y mircrocontroladores.</p></li>
+
+				<li><div class="fecha">06/2007 - 10/2007</div><p class="parrafo"><strong>Mecánico de Mantenimiento hidráulico</strong>, <a href="https://www.salesianssarria.com/" target="_blank">Escuela Profesional Salesians de Sarria</a>,<a href="https://goo.gl/maps/MSoXFSUmDLT5SU61A" target="_blank">Barcelona</a>.</p></li>
+
+				<li><div class="fecha">09/2005 - 06/2007</div><p class="parrafo"><strong>Grado Medio en Electromecánica de Vehículos Autopropulsados</strong>, <a href="https://www.salesianssarria.com/" target="_blank">Escuela Profesional Salesians de Sarria</a>,<a href="https://goo.gl/maps/MSoXFSUmDLT5SU61A" target="_blank">Barcelona</a>.<br>Aprendizaje y práctica de Sistemas mecánicos, hidráulicos, eléctricos y electrónicos que componen los vehículos.</p></li>
+			</ul>
+		</section>
+	</article>
+	<article  id="experiencia">
+		<h2>Experiencia laboral</h2>
+		<section>
+			<ul>
+				<li><div class="fecha">2017 - 2020</div><p class="parrafo"><strong>Electricidad industrial</strong> Cuadros eléctricos <a href="https://www.sae-erfurt.de/" target="_blank">SAE</a>, <a href="https://goo.gl/maps/F5MXMAffMKHMJMTT6" target="_blank">Erfurt</a> Alemania.</p></li>
+
+				<li><div class="fecha">2016 - 2017</div><p class="parrafo"><strong>Electricista</strong> de casas prefabricadas en <a href="https://goo.gl/maps/N7jwgjTxvcNgjeyDA" target="_blank">Alemania</a> <a href="https://www.beetz-haustechnik.de/" target="_blank">beetz</a>.</p></li>
+
+				<li><div class="fecha">Veranos - 2012/13/14</div><p class="parrafo"><strong>Dependiente</strong> <a alt="14 Plaça dels Jardins d'Alfàbia, Barcelona, Cataluña">Estación de servicio y talleres UltraAuto</a> <a href="https://goo.gl/maps/MSoXFSUmDLT5SU61A" target="_blank">Barcelona</a>.</p></li>
+
+				<li><div class="fecha">05/2010 - 09/2010</div><p class="parrafo"><strong>Técnico auxiliar electrónico</strong> <a href="https://www.talgo.com/es/" target="_blank">Talgo S.A</a> Reparación de equipos electrónicos de audio, video, centralitas de aire acondicionado y ordenador de abordo.</p></li>
+
+				<li><div class="fecha">05/2006 - 10/2006</div><p class="parrafo"><strong>Técnico auxiliar mecánico</strong> <a alt="Mazda">Viacar 2000 S.A</a> Reparación de averías del automóvil, revisión Pre-Itv y mecánica general de automóviles Mazda.</p></li>
+			</ul>
+		</section>
+	</article>
+	<article  id="idiomas">
+		<h2>Idiomas</h2>
+		<section>
+			<ul>
+				<li class="idiomas"><label for="language">Español</label><div><progress id="español" max="100" value="100">Nativo</progress></div></li>
+				<li class="idiomas"><label for="language">Catalán</label><div><progress id="catalan" max="100" value="100">Nativo</progress></div></li>
+				<li><div><br><br></div></li>
+				<li class="idiomas"><label for="language">Japonés</label><div><progress id="japones" max="100" value="10">Noken 5</progress></div></li>
+				<li class="idiomas"><label for="language">Alemán</label> <div><progress id="aleman" max="100" value="40">Grundsprache</progress></div></li>
+				<li class="idiomas"><label for="language">Inglés</label> <div><progress id="ingles" max="100" value="40">Mid-level</progress></div></li>
+			</ul>
+		</section>
+	</article>
+	<article id="informatica">
+		<h2>Informática</h2>
+		<section>
+			<ul>
+				<li><p><strong>Programas genéricos</strong></p>
+					<ul>
+						<li class="caja">
+							<ul>
+								<li><a class="etiqueta" href="https://www.microsoft.com/es-es/microsoft-365/free-office-online-for-the-web" target="_blank">Ofimática</a></li>
+								<li><a class="etiqueta" href="https://www.autodesk.es/products/autocad/overview?panel=buy/&AID=11043037&PID=8227014&SID=jkp_CjwKCAjw7--KBhAMEiwAxfpkWIXH6ca1KoHiwSOtX4rMHQhyocOD7Mwry_eGgDXLxddsE9L0sLcLrhoChTwQAvD_BwE&cjevent=6f095c0a262111ec82fc00330a18050e&mktvar002=afc_es_buyonline&affname=8227014_11043037&cjdata=MXxZfDB8WXww&term=1-YEAR&tab=subscription" target="_blank">AutoCAD</a></li>
+								<li><a class="etiqueta" href="http://lra.unileon.es/sites/lra.unileon.es/files/Documents/plc/Unity_Pro/Manuales_Unity/Unity_Manual%20de%20Referencia.pdf" target="_blank">UnityPro</a></li>
+								<li><a class="etiqueta" href="https://es.wikipedia.org/wiki/Micrografx" target="_blank">ABC Snapgraphics</a></li>
+								<li><a class="etiqueta" href="https://www.microsoft.com/es-es/download/details.aspx?id=13276" target="_blank">Visual Basic</a></li>
+								<li><a class="etiqueta" href="https://www.microchip.com/en-us/development-tools-tools-and-software/mplab-x-ide" target="_blank">MPLAB-IDE</a></li>
+								<li><a class="etiqueta" href="https://www.cypress.com/products/psoc-designer" target="_blank">Processing C</a></li>
+								<li><a class="etiqueta" href="https://www.autodesk.es/products/fusion-360/overview?mktvar002=3931073|SEM|10958954811106417493934kwd-11029869505&ef_id=CjwKCAjw7--KBhAMEiwAxfpkWHoxIalb9tA5vnYe8qGg_0mx_aQdz1Mzjjn6flMbaMTjLkEXppA7ERoCeZ4QAvD_BwE:G:s&s_kwcid=AL!11172!3!545628246198!e!!g!!fusion%20360!10958954811!106417493934&mkwid=s|pcrid|545628246198|pkw|fusion%20360|pmt|e|pdv|c|slid||pgrid|106417493934|ptaid|kwd-11029869505|pid|&utm_medium=cpc&utm_source=google&utm_campaign=&utm_term=fusion%20360&utm_content=s|pcrid|545628246198|pkw|fusion%20360|pmt|e|pdv|c|slid||pgrid|106417493934|ptaid|kwd-11029869505|&gclid=CjwKCAjw7--KBhAMEiwAxfpkWHoxIalb9tA5vnYe8qGg_0mx_aQdz1Mzjjn6flMbaMTjLkEXppA7ERoCeZ4QAvD_BwE" target="_blank">Fusion360</a></li>
+								<li><a class="etiqueta" href="https://www.autodesk.es/products/inventor/overview?term=1-YEAR&tab=subscription" target="_blank">Inventor</a></li>
+								<li><a class="etiqueta" href="https://ultimaker.com/es/software/ultimaker-cura" target="_blank">Cura</a></li>
+								<li><a class="etiqueta" href="https://easyeda.com/es" target="_blank">Easy EDA</a></li>
+								<li><a class="etiqueta" href="https://www.python.org/" target="_blank">Python</a></li>
+							</ul>
+						</li>
+						<video class="video" src="https://dms.licdn.com/playlist/C4E05AQEAOXIzKTIXzA/feedshare-captions-thumbnails-dualWrite-inhouse-mp4_h264_aac_500k/0/1563409219083?e=1633867200&v=beta&t=9ifYOrvPur2bSkxY7gutCqkB1iMNP5RaBVqYr9Ei6Fg" controls autoplay muted loop>></video>
+					</ul>
+				</li>
+			</ul>
+			<ul>
+				<li class="caja"><strong>Frontend </strong>
+					<ul>
+						<li><a class="etiqueta" href="https://www.w3schools.com/html/default.asp" target="_blank">HTML</a></li>
+						<li><a class="etiqueta"a href="https://www.w3schools.com/css/default.asp" target="_blank">CSS</a></li>
+						<li><a class="etiqueta" href="https://www.w3schools.com/js/default.asp" target="_blank">JavaScript</a></li>
+						<li><a class="etiqueta" href="https://www.w3schools.com/bootstrap/bootstrap_ver.asp" target="_blank">Bootstrap</a></li>
+					</ul>
+				</li>
+				<li class="caja"><strong>Backend </strong>
+					<ul>
+						<li ><a class="etiqueta" href="https://www.w3schools.com/python/default.asp" target="_blank">Python</a></li>
+						<li ><a class="etiqueta" href="https://www.w3schools.com/sql/default.asp" target="_blank">SQL</a></li>
+					</ul>
+				</li>
+			</ul>
+		</section>
+	</article>
+	<aside>
+		<div class="perfil">
+			<img value="perfil"/>
+		</div>
+		<a class="whatsapp" href="https://wa.me/34666394460" target="_blank" value="whatsapp"><span id="circulo">Escríbeme<span></a>
+		<div class="textoDescriptivo">
+			Tengo un grado medio de automoción, un superior de electronica, experiencia en el extranjero y estoy en mejora continua. Soy un apasionado de la tecnologia, con un perfíl politecnico, me considero apto para realizar todo tipo de tareas que conlleve la practica de mis estudios. Mi trayectoria es muy clara, a pesar de la variedad de tecnologias. Quiero profundizar en lo aprendido y explorar lo que falta por descubrir.
+		</div>
+		<div>
+			<button href="#formacion">Formación</button>
+			<button href="#experiencia">Experiencia</button>
+			<button href="#idiomas">Idiomas</button>
+			<button href="#informatica">Informática</button>	
+		</div>
+	</aside>
+	<footer id="pie">
+		<ul>
+			<details>
+				<summary>Información de contacto: </summary>
+				<li>Nacido el: 7 de septiembre de 1988, Barcelona</li>
+			</details>
+			<details>
+				<summary>Residencia: </summary>
+				<li>08902, Hospitalet de Llobregat</li>
+			</details>
+			<details>
+				<summary>Carnet de conducir: </summary>
+				<li>Permiso B (vehiculos de hasta 3.500kg)</li>
+			</details>
+		</ul>
+	</footer>
+	
+	<script>
+		circulo = document.getElementById("circulo");
+		arrayCirculo = circulo.textContent.split('');
+		circulo.textContent = ''
+
+		for (var i=0; i<arrayCirculo.length; i++) {
+			circulo.innerHTML += '<span style="transform:rotate('+(i*14)+'deg)">'+arrayCirculo[i]+'</span>'
+		}
+
+		document.querySelectorAll('button[href^="#"]').forEach(anchor => {
+			anchor.addEventListener('click', function (e) {
+				e.preventDefault();
+
+				document.querySelector(this.getAttribute('href')).scrollIntoView({
+					behavior: 'smooth'
+				});
+			});
+		});
+	</script>
+</body>
+</html>
